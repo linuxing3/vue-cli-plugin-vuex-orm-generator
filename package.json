@@ -1,0 +1,16 @@
+{
+  "name": "vue-cli-plugin-vuex-orm-generator",
+  "description": "Vuex store orm plugin generator for vue-cli 3",
+  "version": "0.2.0",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "latest",
+    "fs-extra": "^7.0.0"
+  },
+  "author": "linuxing3<linuxing3@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxing3/vue-cli-plugin-vuex-orm-generator.git"
+  },
+  "license": "MIT"
+}

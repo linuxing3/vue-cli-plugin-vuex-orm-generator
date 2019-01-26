@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "allowUnreachableCode": false,
+    "noEmitOnError": true,
+    "strictFunctionTypes": false,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "node",
+      "lodash",
+      "webpack",
+      "webpack-env",
+      "jest"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
