@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-vuex-orm-generator",
   "description": "Vuex store orm plugin generator for vue-cli 3",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "dependencies": {
     "dotenv": "latest",
