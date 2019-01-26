@@ -38,6 +38,8 @@ module.exports = (api, options, rootOptions) => {
         "@types/lowdb": "^1.0.6",
         "@types/nedb": "^1.8.6",
         "@types/webpack": "^4.4.17",
+        "normalizr":"*",
+        // "electron":"*"
       },
     };
 
