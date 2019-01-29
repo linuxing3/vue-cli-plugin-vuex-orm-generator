@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     deleteItem(item) {
-      <%= modelName %>.delete(item._id)
+      <%= modelName %>.delete(item.id)
     },
     editItem(item) {
       window.<%= modelFormName %>.$emit("SET_EDITING", item)

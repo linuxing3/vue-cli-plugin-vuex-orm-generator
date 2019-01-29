@@ -1,3 +1,4 @@
+import { keysOf } from "lodash";
 import { LowdbForElectron } from "@/api/lowdb";
 import { stateObjectFromArray } from "@/util/transformer";
 import { Model } from "@vuex-orm/core";
@@ -14,7 +15,7 @@ const lowdbPlugin = options => {
     const NSModel: Model = models[entity];
 
     if (Array.isArray(entityArray)) {
-      NSModel.commit(state => (state.data = stateObjectFromArray(entityArray)));
+      NSModel.commit(state => (state.data = keysOf(entityArray, o => o["id"])));
       // entityArray.map(item => NSModel.insert({data: item}))
     }
 

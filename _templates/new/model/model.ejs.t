@@ -8,7 +8,7 @@ const EntityName = h.inflection.singularize(model).toLowerCase()
 import { keys } from "lodash";
 
 export interface I<%= ModelName %> {
-   _id: string;
+   id: string;
    <%= fieldName %>: <%= fieldType %>;
    <% fieldNames.split(",").map(field => { %><%= field %>: string;<% }) %>
 }
@@ -16,7 +16,7 @@ export interface I<%= ModelName %> {
 export default class <%= ModelName %> extends Model {
   static entity = "<%= EntityName %>";
 
-  static primaryKey = "_id";
+  static primaryKey = "id";
 
   static fieldsKeys() {
     return keys(this.fields());
@@ -29,7 +29,7 @@ export default class <%= ModelName %> extends Model {
      */
     return keys(this.fields()).reduce((list, field) => {
       if (this.fields()[field] instanceof BelongsTo) {
-        list.push(`${field}_id`);
+        list.push(`${field}id`);
         list.push(field);
       }
       return list;
@@ -38,7 +38,7 @@ export default class <%= ModelName %> extends Model {
 
   static fields() {
     return {
-      _id: this.increment(),
+      id: this.increment(),
       <%= fieldName %>: this.<%= fieldType %>("<%= fieldValue %>"),
       <% fieldNames.split(",").map(field => { %><%= field %>: this.string("<%= field %>"),
       <% }) %>

@@ -46,7 +46,7 @@ $ vue invoke vue-cli-plugin-vuex-orm-generator
 
 **路由文件**
 `router/index.ts`
-`router/path.ts`
+`router/routes.ts`
 
 **基本的数据模型**
 `api/models`
@@ -78,12 +78,27 @@ yarn new component-form
 
 1. `require.context` is not functino error
 
-Install `webpack-env` and set `tsconfig.json` like this
+Install `@types/webpack-env` and set `tsconfig.json` like this
 
 ```
 {
     "types": {
         "webpack",
+        "webpack-env",
+    }
+}
+```
+
+2. `vue-tsx-support` is not enabled
+
+Use `src/App.tsx` as your app entry point
+
+Set the typechecking in `tsconfig`
+
+```
+{
+    "types": {
+        "vue-tsx-support/enable-check",
         "webpack-env",
     }
 }

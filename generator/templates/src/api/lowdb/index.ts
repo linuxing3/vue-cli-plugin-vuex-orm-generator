@@ -116,8 +116,8 @@ export class LowdbForElectron {
    */
   insert(entity: string, data: any): void {
     console.log("Inserting in " + entity);
-    // skip reinsert same _id
-    if (this.find(entity, { _id: data._id }) !== undefined) {
+    // skip reinsert same id
+    if (this.find(entity, { id: data.id }) !== undefined) {
       console.log("Identity Entity exites, skip!");
       return;
     }

@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     deleteItem() {
-      this.Model.delete(this.model._id);
+      this.Model.delete(this.model.id);
     },
     updateItem() {
       if (this.editing) {

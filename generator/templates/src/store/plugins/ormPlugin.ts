@@ -21,7 +21,7 @@ Query.on("beforeDelete", function(model: Model) {
   const { entity } = (this as Query);
   console.log("Delete Hook in " + entity);
   const DB: LowdbForElectron = new LowdbForElectron(entity);
-  DB.delete(entity, { _id: model._id });
+  DB.delete(entity, { id: model.id });
   
 });
 
@@ -29,7 +29,7 @@ Query.on("afterUpdate", function(model: Model) {
   const entity = model.$self().entity;
   console.log("Update Hook in " + entity);
   const DB: LowdbForElectron = new LowdbForElectron(entity);
-  DB.update(entity, { _id: model._id }, model);
+  DB.update(entity, { id: model.id }, model);
 });
 
 /**

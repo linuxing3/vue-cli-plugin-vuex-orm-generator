@@ -1,13 +1,12 @@
-/**
- * 动态路由
- */
-let models =  [];
+import { toLower } from "lodash";
 
-let requireModels = require.context(".", false, /\.ts$/);
+let requiredModels = require.context(".", false, /\.ts$/);
+let models = {};
 
-requireModels.keys().forEach(key => {
+requiredModels.keys().forEach(key => {
   if (key === "./index.ts") return;
-  models.push(requireModels[key].default || requireModels[key]);
-})
+  let moduleName = toLower(key.replace(/(\.\/|\.ts)/g, ""));
+  models[moduleName] = requiredModels(key).default;
+});
 
 export default models;

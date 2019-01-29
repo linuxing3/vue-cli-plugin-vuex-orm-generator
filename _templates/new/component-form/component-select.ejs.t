@@ -11,18 +11,18 @@ import <%= modelName %> from "@/api/models/<%= modelName %>";
 export default {
   data() {
     return {
-      model: { "_id": 1, label: "Select <%= modelName %>" },
+      model: { "id": 1, label: "Select <%= modelName %>" },
     }
   },
   created() {
     window.<%= modelSelectName %> = this;
   },
   computed: {
-    <%= modelArray %>: () => map(pick(["_id", "text"]), <%= modelName%>.all()),
+    <%= modelArray %>: () => map(pick(["id", "text"]), <%= modelName%>.all()),
   },
   methods: {
     change() {
-      this.$emit("<%= modelName %>_CHANGED", this.model._id)
+      this.$emit("<%= modelName %>_CHANGED", this.model.id)
     }
   }
 }
@@ -31,8 +31,8 @@ export default {
   <v-select
       :items="<%= modelArray %>"
       item-text="text"
-      item-value="_id"
-      v-model="model._id"
+      item-value="id"
+      v-model="model.id"
       :label="model.label"
       class="white--text"
       @change="change"

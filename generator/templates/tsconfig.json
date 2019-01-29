@@ -19,6 +19,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
+      // "vue-tsx-support/enable-check",
       "node",
       "lodash",
       "webpack",

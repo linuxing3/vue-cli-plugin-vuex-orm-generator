@@ -12,7 +12,7 @@ import { routes } from "./routes";
 let requiredRoute = require.context(".", false, /\.ts$/);
 
 requiredRoute.keys().forEach(key => {
-  if (key === "./index.ts" || key === "./path.awesome.ts") return;
+  if (key === "./index.ts" || key === "./routes.ts") return;
   routes.push(requiredRoute(key).default || requiredRoute(key));
 });
 
